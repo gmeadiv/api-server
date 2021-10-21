@@ -15,9 +15,8 @@ afterAll(async () => {
 
 describe('Testing our express server', () => {
   it('should fetch all food items on GET /food', async () => {
-    const response = await request.get('/food');
+    const response = await request.get('/api/food');
 
     expect(response.status).toBe(200);
-    expect(response.body.length).toBe(0);
   });
 });
