@@ -16,8 +16,8 @@ class Collection {
         console.log(records);
       } else {
         records = await this.model.findAll(options);
-        console.log(records);
       }
+      return records;
     }
     catch (error) {console.log(error, '<-- READ ERROR');}
   }
@@ -27,7 +27,7 @@ class Collection {
     try {
       let record = await this.model.create(json);
 
-      console.log(record);
+      return record;
     } catch (error) {console.log(error, '<-- CREATE ERROR');}
 
   } 
@@ -36,14 +36,14 @@ class Collection {
     try {
       let record = await this.model.findOne(id);
       let updatedRecord = await record.update(json);
-      console.log(updatedRecord);
+      return updatedRecord;
     } catch (error) {console.log(error, '<-- UPDATE ERROR');}
   }
 
   async delete(id) {
     try {
       let deleteRows = await this.model.destroy({where: {id}});
-      console.log(deleteRows);
+      return deleteRows;
     } catch (error) {console.log(error, '<-- DELETE ERROR');}
   }
 }
