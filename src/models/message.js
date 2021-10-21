@@ -5,7 +5,7 @@ const message = (sequelize, DataTypes) => sequelize.define('message', {
     type: DataTypes.TEXT,
     allowNull: false,
   },
-  channel: {
+  channels: {
     type: DataTypes.STRING,
     allowNull: false,
   },
